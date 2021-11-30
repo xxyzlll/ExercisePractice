@@ -45,9 +45,9 @@ class Home extends React.Component<IAppOwnProps & IAppDispatchProps & IAppStateP
     })
   }
 
-  clickButton = async () => {
+  clickButton = () => {
     // redux
-    await this.props.add(5)
+    this.props.add(5)
   }
 
   render() {
