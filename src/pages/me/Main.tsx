@@ -1,26 +1,27 @@
 import * as React from "react";
+import Header from "../home/components/header";
 
 interface IAppOwnProps {
-}
-
-export interface IAppStateProps {
 }
 
 interface IAppOwnState {
 }
 
 export interface IAppDispatchProps {
+  add: (num: number) => void
 }
 
-class Me extends React.Component<any, any> {
+export interface IAppStateProps {
+  num: number
+}
 
+class Me extends React.Component<IAppOwnProps & IAppDispatchProps & IAppStateProps, IAppOwnState> {
   constructor(props: IAppOwnProps & IAppStateProps & IAppDispatchProps) {
     super(props);
     this.state = {};
   }
 
-
-  componentDidMount = async () => {
+  componentDidMount = () => {
   };
 
   componentWillUnmount = () => {
@@ -29,7 +30,7 @@ class Me extends React.Component<any, any> {
   render() {
     return (
         <>
-          <div>me</div>
+          <Header title={"Me"}/>
         </>
     );
   }

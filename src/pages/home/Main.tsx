@@ -2,6 +2,7 @@ import * as React from "react";
 import { Link } from "react-router-dom";
 import './styles.css'
 import Button from "../../components/Button";
+import Header from "./components/header";
 
 export interface IAppOwnProps {
 }
@@ -54,8 +55,8 @@ class Home extends React.Component<IAppOwnProps & IAppDispatchProps & IAppStateP
     const { nums } = this.state
     return (
         <div className='home'>
-          <div>a</div>
-          <Link to="/me">Authors</Link>
+          <Header title={"React + TypeScript"}/>
+          <Link to="/me" className='link'>Authors</Link>
           <div>
             <Button buttonText={'hello'}
                     type={'error'}
