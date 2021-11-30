@@ -1,0 +1,8 @@
+.buttonBaseStyle {
+    width: 70px;
+    height: 30px;
+    background-color: #40a9ff;
+    border: none;
+    border-radius: 5px;
+    color: white
+}
