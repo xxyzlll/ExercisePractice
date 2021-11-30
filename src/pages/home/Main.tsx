@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
 import './styles.css'
-import Button from "../../components/Button";
+import Button from "@/components/Button";
 import Header from "./components/header";
 
 export interface IAppOwnProps {

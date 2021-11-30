@@ -1,5 +1,5 @@
 import * as React from "react";
-import Header from "../home/components/header";
+import Header from "@/pages/home/components/header";
 
 interface IAppOwnProps {
 }
