@@ -1,7 +1,6 @@
 # 这是一个 typescript + react 的模版项目
-
-    学习demo，后续功能待添加
-
+    
+    button组件基本样式
 
 ## `yarn install`
 
