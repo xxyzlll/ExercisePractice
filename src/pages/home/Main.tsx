@@ -3,24 +3,26 @@ import { Link } from "react-router-dom";
 import './styles.css'
 import Button from "../../components/Button";
 
-export interface IAppStateProps {
+export interface IAppOwnProps {
 }
 
-interface IAppOwnProps {
-}
-
-interface IAppOwnState {
-  num: number
+export interface IAppOwnState {
+  nums: number
 }
 
 export interface IAppDispatchProps {
+  add: (num: number) => void
 }
 
-class Home extends React.Component<any, IAppOwnState> {
-  constructor(props: any) {
+export interface IAppStateProps {
+  num: number
+}
+
+class Home extends React.Component<IAppOwnProps & IAppDispatchProps & IAppStateProps, IAppOwnState> {
+  constructor(props: IAppOwnProps & IAppDispatchProps & IAppStateProps) {
     super(props);
     this.state = {
-      num: 0
+      nums: 0
     };
   }
 
@@ -32,35 +34,39 @@ class Home extends React.Component<any, IAppOwnState> {
 
   add = () => {
     this.setState({
-      num: this.state.num + 1
+      nums: this.state.nums + 1
     })
   }
 
   reduce = () => {
     this.setState({
-      num: this.state.num - 1
+      nums: this.state.nums - 1
     })
   }
 
-  clickButton = () => {
-    alert("点击")
+  clickButton = async () => {
+    // redux
+    await this.props.add(5)
+    console.log(this.props.num)
   }
 
   render() {
-    const { num } = this.state
+    const { nums } = this.state
     return (
         <div className='home'>
           <div>a</div>
           <Link to="/me">Authors</Link>
           <div>
             <Button buttonText={'hello'}
+                    type={'error'}
                     styleOptions={{
-                      color: 'red'
+                      color: 'white',
+                      backgroundColor: 'green'
                     }}
                     onClick={this.clickButton}/>
             <span>计数器：
               <button onClick={this.add}> + </button>
-              {num}
+              {nums}
               <button onClick={this.reduce}> - </button>
             </span>
 
