@@ -5,7 +5,7 @@ export enum HomeActionTypes {
 export interface ADD_TODO {
   type: HomeActionTypes.ADD_TODO;
   payload: {
-    num: string,
+    num: number,
   };
 }
 
