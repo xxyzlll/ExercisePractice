@@ -7,6 +7,14 @@
     border: 1px solid #cdc9c9;
 }
 
+.menu_title {
+    text-align: center;
+    color: white;
+    background-color: #4da7f3;
+    height: 45px;
+    line-height: 45px;
+}
+
 .treeItem {
     background-color: #001529;
     color: #a8a5a5;
@@ -15,11 +23,12 @@
     position: relative;
 }
 
-.dark_hover{
+.dark_hover {
     width: 100%;
     height: 50px;
 }
-.light_hover{
+
+.light_hover {
     width: 100%;
     height: 50px;
 }
@@ -30,7 +39,7 @@
 
 .dark_hover:hover {
     background-color: #1f8aef;
-/*    border-right: 2px solid #1890FF;*/
+    /*    border-right: 2px solid #1890FF;*/
     color: white;
 }
 
@@ -45,15 +54,18 @@
     right: 10px;
 }
 
-.dark_theme_color{
+.dark_theme_color {
     background-color: #414345;
 }
-.light_theme_color{
+
+.light_theme_color {
     background-color: #ffffff;
 }
-.dark_theme_child_color{
+
+.dark_theme_child_color {
     background-color: #0a0a0a;
 }
-.light_theme_child_color{
+
+.light_theme_child_color {
     background-color: #e8e5e5;
 }
