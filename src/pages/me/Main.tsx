@@ -2,12 +2,18 @@ import * as React from "react";
 import Header from "@/pages/home/components/header";
 import Menu from "@/components/Menu";
 import { menuTree } from "@/model/me";
+import Form from "@/components/Form";
+import CountDownButton from "@/components/CountDownButton/CountDownButton";
+import Dropdown from "@/components/Dropdown";
+import Modal from "@/components/Modal/Main";
 
 interface IAppOwnProps {
 }
 
 interface IAppOwnState {
-  menuTree: menuTree[]
+  menuTree: menuTree[],
+  dropList: any[],
+  visible:boolean
 }
 
 export interface IAppDispatchProps {
@@ -22,6 +28,7 @@ class Me extends React.Component<IAppOwnProps & IAppDispatchProps & IAppStatePro
   constructor(props: IAppOwnProps & IAppStateProps & IAppDispatchProps) {
     super(props);
     this.state = {
+      dropList: [1, 2, 3],
       menuTree: [
         {
           label: "1", showChildTree: true, children: [{
@@ -47,7 +54,8 @@ class Me extends React.Component<IAppOwnProps & IAppDispatchProps & IAppStatePro
           }
           ]
         }
-      ]
+      ],
+      visible: false
     };
   }
 
@@ -64,7 +72,23 @@ class Me extends React.Component<IAppOwnProps & IAppDispatchProps & IAppStatePro
       menuTree: newMenuTree
     })
   }
+  clickDropdown = (index: number) => {
+    console.log(index)
+  }
+  sendVCode = () => {
 
+  }
+  showModal=() =>{
+    this.setState({ visible: true })
+  }
+
+  closeModal=() =>{
+    console.log('我是onClose回调')
+  }
+
+  confirm=()=> {
+    console.log('我是confirm回调')
+  }
   render() {
     return (
         <>
@@ -73,6 +97,23 @@ class Me extends React.Component<IAppOwnProps & IAppDispatchProps & IAppStatePro
                 title={"Typescript"}
                 clickMenu={this.clickMenu}
                 theme={"dark"}/>
+          <Form type={"textarea"}/>
+          <CountDownButton timerCount={2}
+                           enable={false}
+                           textStyle={null}
+                           hadSend={this.sendVCode}/>
+          <Dropdown text={'header'}
+                    dropList={this.state.dropList}
+                    clickDropdown={this.clickDropdown}/>
+          <button onClick={this.showModal}>click here</button>
+          <Modal
+              visible={this.state.visible}
+              title="这是自定义title"
+              confirm={this.confirm}
+              onClose={this.closeModal}
+          >
+            这是自定义content
+          </Modal>
         </>
     );
   }
