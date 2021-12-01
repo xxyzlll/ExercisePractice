@@ -33,8 +33,9 @@ class Dropdown extends React.Component<Props, States> {
   }
 
   clickItem = (index: number) => {
+    const { clickDropdown } = this.props
     this.changeStatus()
-    this.props.clickDropdown && this.props.clickDropdown(index)
+    clickDropdown && clickDropdown(index)
   }
 
   changeStatus = () => {
@@ -45,6 +46,7 @@ class Dropdown extends React.Component<Props, States> {
 
   render() {
     const { text } = this.props
+    const { showList } = this.state
     return (
         <>
           <div className="main_title">
@@ -52,7 +54,7 @@ class Dropdown extends React.Component<Props, States> {
               {text}
               <i className="iconfont space">&#xe65e;</i>
             </div>
-            {this.state.showList && <div className="drop_list">
+            {showList && <div className="drop_list">
                 <this.listItem/>
             </div>}
           </div>

@@ -24,20 +24,10 @@ class Button extends React.Component<Props, States> {
 
   componentDidMount = () => {
     const { type } = this.props
-    if (type === "success") {
-      this.setState({
-        backgroundColor: "#40a9ff"
-      })
-    } else if (type === "warn") {
-      this.setState({
-        backgroundColor: "#dedc81",
-      })
-    } else if (type === "error") {
-      this.setState({
-        backgroundColor: "#ff4d4f"
-      })
-    } else {
-    }
+    this.setState({
+      backgroundColor:
+          type === "success" ? "#40a9ff" : type === "warn" ? "#dedc81" : "#ff4d4f"
+    })
   }
 
   onClick = () => {
