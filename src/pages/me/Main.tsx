@@ -70,7 +70,7 @@ class Me extends React.Component<IAppOwnProps & IAppDispatchProps & IAppStatePro
     return (
         <>
           <Header title={"Me"}/>
-          <Menu menuTree={this.state.menuTree} clickMenu={this.clickMenu}/>
+          <Menu menuTree={this.state.menuTree} clickMenu={this.clickMenu} theme={"dark"}/>
         </>
     );
   }
