@@ -2,6 +2,8 @@ import * as React from "react";
 import Header from "@/pages/home/components/header";
 import Menu from "@/components/Menu";
 import { menuTree } from "@/model/me";
+import Form from "@/components/Form";
+import CountDownButton from "@/components/CountDownButton/CountDownButton";
 
 interface IAppOwnProps {
 }
@@ -73,6 +75,8 @@ class Me extends React.Component<IAppOwnProps & IAppDispatchProps & IAppStatePro
                 title={"Typescript"}
                 clickMenu={this.clickMenu}
                 theme={"dark"}/>
+          <Form type={"textarea"} />
+          <CountDownButton timerCount={60} enable={false} textStyle={null}/>
         </>
     );
   }
