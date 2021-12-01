@@ -4,7 +4,7 @@ import "./styles.css"
 export type menuTheme = 'dark' | 'light'
 
 export interface Props {
-  title?:string,
+  title?: string,
   menuTree?: any,
   clickMenu: (index: number) => void,
   theme?: menuTheme
@@ -60,9 +60,8 @@ class Menu extends React.Component<Props, States> {
     clickMenu && clickMenu(index)
   }
 
-
   render() {
-    const {title}=this.props
+    const { title } = this.props
     return (
         <>
           <div className="menu">
