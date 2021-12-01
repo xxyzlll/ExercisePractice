@@ -1,6 +1,5 @@
 import * as React from "react";
 import Header from "@/pages/home/components/header";
-import Dropdown from "@/components/Dropdown";
 import Menu from "@/components/Menu";
 import { menuTree } from "@/model/me";
 
@@ -70,7 +69,9 @@ class Me extends React.Component<IAppOwnProps & IAppDispatchProps & IAppStatePro
     return (
         <>
           <Header title={"Me"}/>
-          <Menu menuTree={this.state.menuTree} clickMenu={this.clickMenu} theme={"dark"}/>
+          <Menu menuTree={this.state.menuTree}
+                clickMenu={this.clickMenu}
+                theme={"dark"}/>
         </>
     );
   }

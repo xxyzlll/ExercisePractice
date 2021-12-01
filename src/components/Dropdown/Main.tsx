@@ -1,6 +1,5 @@
 import * as React from "react";
 import "./styles.css"
-import { MouseEventHandler } from "react";
 
 export interface Props {
   text: string,

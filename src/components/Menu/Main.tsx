@@ -1,7 +1,5 @@
 import * as React from "react";
 import "./styles.css"
-import { MouseEventHandler } from "react";
-import { menuTree } from "@/model/me";
 
 export type menuTheme = 'dark' | 'light'
 
@@ -29,9 +27,9 @@ class Menu extends React.Component<Props, States> {
         theme === "dark" ? "dark_theme_color dark_hover" :
             "light_theme_color light_hover" : "dark_theme_color dark_hover"
 
-    let themeChildClass = theme ? theme === "dark" ?
-        "dark_theme_child_color dark_hover" :
-        "light_theme_child_color light_hover" : "dark_theme_child_color dark_hover"
+    let themeChildClass = theme ?
+        theme === "dark" ? "dark_theme_child_color dark_hover" :
+            "light_theme_child_color light_hover" : "dark_theme_child_color dark_hover"
 
     let themeBackColor = ['treeItem', themeClass].join(" ")
     let themeChildBackColor = ['treeItem_child treeItem', themeChildClass].join(" ")
@@ -63,8 +61,6 @@ class Menu extends React.Component<Props, States> {
 
 
   render() {
-    const {} = this.props
-    const {} = this.state
     return (
         <>
           <div className="menu">
