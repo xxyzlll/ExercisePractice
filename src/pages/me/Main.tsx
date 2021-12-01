@@ -1,5 +1,6 @@
 import * as React from "react";
 import Header from "@/pages/home/components/header";
+import Dropdown from "@/components/Dropdown";
 
 interface IAppOwnProps {
 }
@@ -31,6 +32,7 @@ class Me extends React.Component<IAppOwnProps & IAppDispatchProps & IAppStatePro
     return (
         <>
           <Header title={"Me"}/>
+          <Dropdown text={'hey'}/>
         </>
     );
   }

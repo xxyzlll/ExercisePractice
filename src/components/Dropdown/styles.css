@@ -1,0 +1,26 @@
+.main_title {
+    color: #1890FF;
+    display: inline-flex;
+    height: 30px;
+    line-height: 30px;
+    position: relative;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.space {
+    margin-left: 5px;
+}
+
+.drop_list {
+    box-shadow: rgba(0,0,0,.2)  0 1px 5px 0px;
+    background-color: white;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    min-width: 80px;
+}
+.item:hover{
+    background-color: #4da7f3;
+    color: white;
+}
