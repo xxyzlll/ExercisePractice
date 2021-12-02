@@ -38,9 +38,14 @@ class Button extends React.Component<Props, States> {
     const { buttonText, styleOptions } = this.props
     // assign 相同的元素第一个会被第二个覆盖
     const styleOption = Object.assign({}, styleOptions, { backgroundColor: this.state.backgroundColor })
+    if (!styleOption.width) {
+      //styleOption.width = 70
+    }
     return (
         <>
-          <button style={styleOption} onClick={this.onClick} className='buttonBaseStyle'>
+          <button style={styleOption}
+                  onClick={this.onClick}
+                  className='buttonBaseStyle'>
             {buttonText || 'Button'}
           </button>
         </>

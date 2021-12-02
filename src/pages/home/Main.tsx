@@ -1,14 +1,13 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
-import './styles.css'
-import Button from "@/components/Button";
+import './styles.less'
 import Header from "./components/header";
+import Button from "@/components/Button";
 
 export interface IAppOwnProps {
 }
 
 export interface IAppOwnState {
-  nums: number
 }
 
 export interface IAppDispatchProps {
@@ -22,9 +21,7 @@ export interface IAppStateProps {
 class Home extends React.Component<IAppOwnProps & IAppDispatchProps & IAppStateProps, IAppOwnState> {
   constructor(props: IAppOwnProps & IAppDispatchProps & IAppStateProps) {
     super(props);
-    this.state = {
-      nums: 0
-    };
+    this.state = {};
   }
 
   componentDidMount = () => {
@@ -33,44 +30,32 @@ class Home extends React.Component<IAppOwnProps & IAppDispatchProps & IAppStateP
   componentWillUnmount = () => {
   };
 
-  add = () => {
-    this.setState({
-      nums: this.state.nums + 1
-    })
-  }
-
-  reduce = () => {
-    this.setState({
-      nums: this.state.nums - 1
-    })
-  }
-
-  clickButton = () => {
-    // redux
-    this.props.add(5)
+  PageNeck = () => {
+    return (
+        <div className="neck">
+          <div className="neck_top">Happy UI</div>
+          <div className="neck_mid">文档基于____生成</div>
+          <div className="neck_bottom">
+            <Button type={"success"}
+                    buttonText={"快速上手"}
+                    styleOptions={{
+                      padding: "0 32px",
+                      borderRadius:22,
+                      fontSize:16,
+                      height: 44,
+                      fontWeight:600
+                    }}/>
+          </div>
+        </div>
+    )
   }
 
   render() {
-    const { nums } = this.state
+    const { PageNeck } = this
     return (
         <div className='home'>
-          <Header title={"YUI"}/>
-          <Link to="/me" className='link'>Authors</Link>
-          <div>
-            <Button buttonText={'hello'}
-                    type={'error'}
-                    styleOptions={{
-                      color: 'white',
-                      backgroundColor: 'green'
-                    }}
-                    onClick={this.clickButton}/>
-            <span>计数器：
-              <button onClick={this.add}> + </button>
-              {nums}
-              <button onClick={this.reduce}> - </button>
-            </span>
-
-          </div>
+          <Header title={"Happy UI"}/>
+          <PageNeck/>
         </div>
     );
   }

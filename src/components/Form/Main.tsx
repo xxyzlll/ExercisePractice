@@ -34,7 +34,6 @@ class Form extends React.Component<Props | InputHTMLAttributes<any>, States> {
             <label>
               <Input {...args} ref={(node) => this.node = node}/>
             </label>
-            <button>a</button>
           </form>
         </>
     );
