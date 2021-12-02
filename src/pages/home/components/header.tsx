@@ -1,5 +1,5 @@
 import * as React from "react";
-import "./styles.css"
+import "./styles.less"
 
 export interface Props {
   title?: string

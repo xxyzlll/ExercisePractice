@@ -54,7 +54,7 @@ class Home extends React.Component<IAppOwnProps & IAppDispatchProps & IAppStateP
     const { nums } = this.state
     return (
         <div className='home'>
-          <Header title={"React + TypeScript"}/>
+          <Header title={"YUI"}/>
           <Link to="/me" className='link'>Authors</Link>
           <div>
             <Button buttonText={'hello'}
