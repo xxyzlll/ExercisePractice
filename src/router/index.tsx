@@ -1,9 +1,8 @@
-import Home from "../pages/home"
+import React from "react";
+import { createBrowserHistory } from 'history'
 
-export const createRoutes = (store: any) => ({
-  path: '/',
-  component: Home,
-  indexRoute: Home
-})
-
-export default createRoutes
+const history = createBrowserHistory()
+export function push(url: string) {
+  console.log(url)
+  history.replace('me')
+}

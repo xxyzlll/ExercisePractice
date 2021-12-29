@@ -1,8 +1,8 @@
 import * as React from "react";
-import { Link } from "react-router-dom";
 import './styles.less'
 import Header from "./components/header";
 import Button from "@/components/Button";
+import { push } from "@/router";
 
 export interface IAppOwnProps {
 }
@@ -29,7 +29,9 @@ class Home extends React.Component<IAppOwnProps & IAppDispatchProps & IAppStateP
 
   componentWillUnmount = () => {
   };
-
+  toMe = () => {
+    push("Me")
+  }
   PageNeck = () => {
     return (
         <div className="neck">
@@ -37,13 +39,14 @@ class Home extends React.Component<IAppOwnProps & IAppDispatchProps & IAppStateP
           <div className="neck_mid">文档基于____生成</div>
           <div className="neck_bottom">
             <Button type={"success"}
+                    onClick={this.toMe}
                     buttonText={"快速上手"}
                     styleOptions={{
                       padding: "0 32px",
-                      borderRadius:22,
-                      fontSize:16,
+                      borderRadius: 22,
+                      fontSize: 16,
                       height: 44,
-                      fontWeight:600
+                      fontWeight: 600
                     }}/>
           </div>
         </div>
